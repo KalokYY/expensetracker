@@ -26,11 +26,29 @@ class _ExpensesState extends State<Expenses> {
       date: DateTime.now(), 
       category: Category.leisure
     ),
+
+    Expense(
+      title: 'Train Ticket', 
+      amount: 34.00, 
+      date: DateTime.now(), 
+      category: Category.travel,
+    ),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Expense Tracker'),
+          actions:[
+            IconButton(
+              onPressed: () {}, 
+              icon: const Icon(
+                Icons.add
+              ),
+            ),
+          ],
+        ),
       body: 
         Column(
           children: [
