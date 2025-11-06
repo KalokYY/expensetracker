@@ -37,7 +37,7 @@ List<ExpenseBucket> get buckets{
         horizontal: 8,
       ),
       width: double.infinity,
-      height: 100,
+      height: 150,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         gradient: LinearGradient(colors: [
