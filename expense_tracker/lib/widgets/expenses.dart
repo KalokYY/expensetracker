@@ -80,6 +80,9 @@ void _removeExpense(Expense expense)
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    print("Width ${MediaQuery.of(context).size.width}");
+    print("Height ${MediaQuery.of(context).size.height}");
     Widget mainContent = const Center(
       child: Text("Click the + button to add an Expense!"),
     );
@@ -101,13 +104,20 @@ void _removeExpense(Expense expense)
             ),
           ],
         ),
-      body: 
-        Column(
+      body: width < 600
+        ? Column(
           children: [
             Chart(expenses: _registeredExpenses),
             Expanded(child: mainContent),
         ],
-      ),
+      )
+      : Row(
+        children: [
+          Expanded(child: 
+          Chart(expenses: _registeredExpenses)),
+          Expanded(child: mainContent),
+        ],
+      )
     );
   }
 }
